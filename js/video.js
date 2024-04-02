@@ -11,10 +11,10 @@ window.addEventListener("load", function() {
 
 document.querySelector("#play").addEventListener("click", function() {
 	video = document.querySelector("#player1");
-	volume = video.volume * 100
+	volume_percent = video.volume * 100
 	video.play();
+	document.querySelector("#volume").innerHTML = volume_percent + "%"
 	console.log("Played video");
-	console.log("The volume is at " + volume + "%")
 }
 );
 
@@ -78,7 +78,8 @@ document.querySelector("#slider").addEventListener("change", function() {
 	volume = document.querySelector("#slider").value;
 	volume_decimal = volume / 100
 	video.volume = volume_decimal;
-	console.log("The volume is at " + volume + "%")
+	document.querySelector("#volume").innerHTML = volume + "%"
+	console.log("The volume value is " + volume_decimal)
 }
 );
 
