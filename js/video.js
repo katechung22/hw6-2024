@@ -11,9 +11,10 @@ window.addEventListener("load", function() {
 
 document.querySelector("#play").addEventListener("click", function() {
 	video = document.querySelector("#player1");
+	volume = video.volume * 100
 	video.play();
 	console.log("Played video");
-	console.log("The volume value is at " + video.volume)
+	console.log("The volume is at " + volume + "%")
 }
 );
 
@@ -75,8 +76,9 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("change", function() {
 	video = document.querySelector("#player1");
 	volume = document.querySelector("#slider").value;
-	video.volume = volume/100;
-	console.log("The volume value is at " + video.volume)
+	volume_decimal = volume / 100
+	video.volume = volume_decimal;
+	console.log("The volume is at " + volume + "%")
 }
 );
 
